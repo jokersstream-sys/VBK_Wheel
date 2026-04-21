@@ -1,17 +1,11 @@
 {
   "name": "jokers-giveaway-wheel",
   "version": "1.0.0",
-  "description": "Joker's Giveaway Wheel - Custom Twitch stream giveaway wheel with Google Sheets sync and V-Bucks integration",
-  "main": "server.js",
+  "description": "Joker's Giveaway Wheel",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "start": "serve . -p $PORT"
   },
   "dependencies": {
-    "express": "^4.18.2"
-  },
-  "license": "UNLICENSED"
+    "serve": "^14.2.0"
+  }
 }
