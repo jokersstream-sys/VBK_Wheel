@@ -6,8 +6,8 @@
     <title>Joker's Giveaway Wheel - FINAL</title>
     
     <!-- Google API Client Library for OAuth -->
-    <script src="https://apis.google.com/js/api.js"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
@@ -547,7 +547,7 @@
         // ============================================
         async function sendWinnerToAppsScript(username) {
             const amount = document.getElementById('vbucksAmount').value;
-            const url = `https://script.google.com/macros/s/AKfycby0o25F0N2ISGMBNf4GTq143GUCLeUCJbvG1yPoLUxHyLSHC6mLpNWUuxKH0PHFj3c1Cw/exec?username=${encodeURIComponent(username)}&amount=${encodeURIComponent(amount)}&sender=G_Wheel_Bot`;
+            const url = `https://script.google.com/macros/s/AKfycby0o25F0N2ISGMBNf4GTq143GUCLeUCJbvG1yPoLUxHyLSHC6mLpNWUuxKH0PHFj3c1Cw/exec?command=uwin&username=${encodeURIComponent(username)}&amount=${encodeURIComponent(amount)}&moderator=G_Wheel_Bot`;
             try {
                 await fetch(url, { method: 'GET', mode: 'no-cors' });
                 console.log(`V-Bucks sent: !uwin ${amount} ${username} (G_Wheel_Bot)`);
@@ -1151,7 +1151,7 @@
                         isReSpin = true;
                         spin();
                     }
-                }, 1000);
+                }, 3000);
             }
             pendingWinner = null;
         }
@@ -1530,11 +1530,9 @@
         };
         
         drawWheel();
-        
-        // Initialize OAuth on page load
-        gapiLoaded();
-        gisLoaded();
     </script>
 </body>
 </html>
+
+
 
