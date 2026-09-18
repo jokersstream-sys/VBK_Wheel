@@ -547,7 +547,7 @@
         // ============================================
         async function sendWinnerToAppsScript(username) {
             const amount = document.getElementById('vbucksAmount').value;
-            const url = `https://script.google.com/macros/s/AKfycbw8XFpqttGqnGnsW8Gxw5WEiycSuQEW0L0Ut0x0R0KthlQQT3kkAx6aEbeeySdDE60ZwA/exec?command=uwin&username=${encodeURIComponent(username)}&amount=${encodeURIComponent(amount)}&moderator=G_Wheel_Bot`;
+            const url = `https://script.google.com/macros/s/AKfycbypy0j6gq_nSpqlf8gSJIQe4cbRtASgJRoxCDiR87HRnVy0Om8-MpSPLbGDLt1-8cmP7Q/exec?command=uwin&username=${encodeURIComponent(username)}&amount=${encodeURIComponent(amount)}&moderator=G_Wheel_Bot`;
             try {
                 await fetch(url, { method: 'GET', mode: 'no-cors' });
                 console.log(`V-Bucks sent: !uwin ${amount} ${username} (G_Wheel_Bot)`);
